@@ -12,6 +12,7 @@
 		250E0F081FDFBBB800460ED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 250E0F061FDFBBB800460ED6 /* Main.storyboard */; };
 		250E0F0A1FDFBBB800460ED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 250E0F091FDFBBB800460ED6 /* Assets.xcassets */; };
 		250E0F0D1FDFBBB800460ED6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 250E0F0B1FDFBBB800460ED6 /* LaunchScreen.storyboard */; };
+		251EE5191FE0E7AB00626415 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251EE5181FE0E7AB00626415 /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		250E0F091FDFBBB800460ED6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		250E0F0C1FDFBBB800460ED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		250E0F0E1FDFBBB800460ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		251EE5181FE0E7AB00626415 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				250E0F021FDFBBB800460ED6 /* AppDelegate.swift */,
 				250E0F041FDFBBB800460ED6 /* ViewController.swift */,
 				250E0F061FDFBBB800460ED6 /* Main.storyboard */,
+				251EE5181FE0E7AB00626415 /* RatingControl.swift */,
 				250E0F091FDFBBB800460ED6 /* Assets.xcassets */,
 				250E0F0B1FDFBBB800460ED6 /* LaunchScreen.storyboard */,
 				250E0F0E1FDFBBB800460ED6 /* Info.plist */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				250E0F051FDFBBB800460ED6 /* ViewController.swift in Sources */,
+				251EE5191FE0E7AB00626415 /* RatingControl.swift in Sources */,
 				250E0F031FDFBBB800460ED6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
