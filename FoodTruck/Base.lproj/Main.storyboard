@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -77,45 +78,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="67Z-h0-gJp">
-                                <rect key="frame" x="20" y="84" width="335" height="425"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Igr-h8-QaD">
+                                <rect key="frame" x="20" y="84" width="335" height="563"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PWW-83-3oF">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="CPF-yw-L4d">
-                                        <rect key="frame" x="0.0" y="38" width="335" height="335"/>
-                                        <gestureRecognizers/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="67Z-h0-gJp">
+                                        <rect key="frame" x="0.0" y="20" width="335" height="425"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PWW-83-3oF">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="CPF-yw-L4d">
+                                                <rect key="frame" x="0.0" y="38" width="335" height="335"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="CPF-yw-L4d" secondAttribute="height" multiplier="1:1" id="Hvt-eS-aqG"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="tWx-Or-vzX" appends="YES" id="YVa-ZJ-gBi"/>
+                                                </connections>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mmy-Ao-C1p" customClass="RatingControl" customModule="FoodTruck" customModuleProvider="target">
+                                                <rect key="frame" x="41.5" y="381" width="252" height="44"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </stackView>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="CPF-yw-L4d" secondAttribute="height" multiplier="1:1" id="Hvt-eS-aqG"/>
+                                            <constraint firstItem="PWW-83-3oF" firstAttribute="leading" secondItem="67Z-h0-gJp" secondAttribute="leading" id="I32-M6-FX9"/>
+                                            <constraint firstAttribute="trailing" secondItem="PWW-83-3oF" secondAttribute="trailing" id="d3y-01-8b1"/>
                                         </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="tWx-Or-vzX" appends="YES" id="YVa-ZJ-gBi"/>
-                                        </connections>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mmy-Ao-C1p" customClass="RatingControl" customModule="FoodTruck" customModuleProvider="target">
-                                        <rect key="frame" x="41.5" y="381" width="252" height="44"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="PWW-83-3oF" firstAttribute="leading" secondItem="67Z-h0-gJp" secondAttribute="leading" id="I32-M6-FX9"/>
-                                    <constraint firstAttribute="trailing" secondItem="PWW-83-3oF" secondAttribute="trailing" id="d3y-01-8b1"/>
+                                    <constraint firstAttribute="trailing" secondItem="67Z-h0-gJp" secondAttribute="trailing" id="ISZ-8G-9e6"/>
+                                    <constraint firstItem="67Z-h0-gJp" firstAttribute="centerX" secondItem="Igr-h8-QaD" secondAttribute="centerX" id="Ihs-7D-LcV"/>
+                                    <constraint firstAttribute="bottom" secondItem="67Z-h0-gJp" secondAttribute="bottom" id="Mrv-tn-gkv"/>
+                                    <constraint firstAttribute="trailing" secondItem="67Z-h0-gJp" secondAttribute="trailing" id="OGe-Ls-pcp"/>
+                                    <constraint firstItem="67Z-h0-gJp" firstAttribute="leading" secondItem="Igr-h8-QaD" secondAttribute="leading" id="Qty-Hg-Eco"/>
+                                    <constraint firstItem="67Z-h0-gJp" firstAttribute="top" secondItem="Igr-h8-QaD" secondAttribute="top" constant="20" id="Wdu-cV-KiX"/>
+                                    <constraint firstItem="67Z-h0-gJp" firstAttribute="top" secondItem="Igr-h8-QaD" secondAttribute="top" constant="20" id="aYv-dl-vvK"/>
+                                    <constraint firstItem="67Z-h0-gJp" firstAttribute="leading" secondItem="Igr-h8-QaD" secondAttribute="leading" id="s9a-GE-Xvv"/>
                                 </constraints>
-                            </stackView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="67Z-h0-gJp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5lZ-xh-ZJj"/>
-                            <constraint firstItem="67Z-h0-gJp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="THq-ID-O85"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="67Z-h0-gJp" secondAttribute="trailing" constant="20" id="TKT-XY-ieK"/>
+                            <constraint firstItem="Igr-h8-QaD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1XA-qT-gZU"/>
+                            <constraint firstItem="Igr-h8-QaD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XCz-yb-Kc2"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Igr-h8-QaD" secondAttribute="bottom" constant="20" id="XZg-Nj-6hO"/>
+                            <constraint firstItem="Igr-h8-QaD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="yYe-RG-zl2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -146,7 +163,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1066" y="34"/>
+            <point key="canvasLocation" x="1064.8" y="33.733133433283363"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="59A-FM-rMl">
